@@ -1,4 +1,5 @@
 import { Search, X } from 'lucide-react'
+import { z } from 'zod'
 
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
@@ -9,6 +10,14 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select'
+
+const orderFiltersSchema = z.object({
+  orderId: z.string().optional(),
+  customerName: z.string().optional(),
+  status: z.string().optional(),
+})
+
+type OrderFiltersSchema = z.infer<typeof orderFiltersSchema>
 
 export function OrderTableFilters() {
   return (
