@@ -128,7 +128,7 @@ export function StoreProfileDialog() {
           </div>
         </div>
         <DialogFooter>
-          <DialogClose>
+          <DialogClose asChild>
             <Button variant="ghost" type="button">
               Cancelar
             </Button>
