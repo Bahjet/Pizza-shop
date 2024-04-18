@@ -67,6 +67,7 @@ export function OrderTableRow({ order }: OrderTableRowProps) {
         updateOrderStatusOnCache(orderId, 'processing')
       },
     })
+
   // pending, processing, delivering, delivered
   const { mutateAsync: dispatchOrderFn, isPending: isDispatchingOrder } =
     useMutation({
@@ -83,8 +84,6 @@ export function OrderTableRow({ order }: OrderTableRowProps) {
         updateOrderStatusOnCache(orderId, 'delivered')
       },
     })
-
-  console.log(order.status)
 
   return (
     <TableRow>
